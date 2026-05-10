@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, type FormEvent } from "react";
 import { motion, useScroll, useTransform } from "motion/react";
 import emailjs from "@emailjs/browser";
 import {
@@ -14,7 +14,6 @@ import {
   Droplets,
   Eye,
   Wind,
-  Brain,
   Sparkle,
 } from "lucide-react";
 
@@ -46,7 +45,7 @@ export default function App() {
       window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     if (
@@ -61,10 +60,12 @@ export default function App() {
     setIsSubmitting(true);
 
     try {
-      // EmailJS configuration
-      const serviceId = "service_ilfhza8";
-      const templateId = "template_zjy3y19";
-      const publicKey = "mYpwEHZH5G02AFCCT";
+      const serviceId =
+        import.meta.env.VITE_EMAILJS_SERVICE_ID || "service_ilfhza8";
+      const templateId =
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID || "template_zjy3y19";
+      const publicKey =
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY || "mYpwEHZH5G02AFCCT";
 
       // Template parameters that will be used in your email template
       const templateParams = {
@@ -126,15 +127,15 @@ export default function App() {
           backdropFilter: scrolled ? "blur(10px)" : "none",
         }}
       >
-        <div className="container mx-auto px-6 py-6 flex items-center justify-between">
+        <div className="container mx-auto px-4 sm:px-6 py-4 sm:py-6 flex items-center justify-between gap-4">
           <h1
-            className="tracking-[0.3em] uppercase"
+            className="uppercase"
             style={{
               fontFamily: "Cinzel, serif",
               color: "white",
               fontWeight: 400,
-              fontSize: "1.25rem",
-              letterSpacing: "0.3em",
+              fontSize: "clamp(0.95rem, 3.5vw, 1.25rem)",
+              letterSpacing: "clamp(0.12em, 1vw, 0.3em)",
             }}
           >
             PUNARNAVAM
@@ -177,11 +178,17 @@ export default function App() {
               Book Now
             </button>
           </nav>
+          <button
+            onClick={() => setShowBookingModal(true)}
+            className="md:hidden border border-white text-white px-4 py-2 uppercase tracking-wider text-xs hover:bg-white hover:text-[#364F35] transition-all shrink-0"
+          >
+            Book
+          </button>
         </div>
       </header>
 
       {/* Hero Section */}
-      <section className="relative h-screen overflow-hidden">
+      <section className="relative min-h-[680px] h-screen overflow-hidden">
         <motion.div
           style={{ y: heroY }}
           className="absolute inset-0"
@@ -201,12 +208,12 @@ export default function App() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.3 }}
-            className="text-white tracking-[0.5em] uppercase mb-6"
+            className="text-white uppercase mb-6 max-w-5xl"
             style={{
               fontFamily: "Cinzel, serif",
               fontSize: "clamp(2rem, 5vw, 4rem)",
               fontWeight: 300,
-              letterSpacing: "0.5em",
+              letterSpacing: "clamp(0.08em, 1.2vw, 0.5em)",
             }}
           >
             HEAL. REJUVENATE. TRANSFORM.
@@ -215,7 +222,7 @@ export default function App() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.6 }}
-            className="text-white max-w-3xl mb-10 text-lg leading-relaxed"
+            className="text-white max-w-3xl mb-10 text-base sm:text-lg leading-relaxed"
           >
             Discover authentic Ayurvedic healing nestled in the
             serene hills of Mankulam, where ancient wisdom meets
@@ -227,7 +234,7 @@ export default function App() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.9 }}
             onClick={() => setShowBookingModal(true)}
-            className="border-2 border-white text-white px-10 py-3 uppercase tracking-wider hover:bg-white hover:text-[#364F35] transition-all"
+            className="border-2 border-white text-white px-8 sm:px-10 py-3 uppercase tracking-wider hover:bg-white hover:text-[#364F35] transition-all"
           >
             Discover More
           </motion.button>
@@ -235,14 +242,14 @@ export default function App() {
       </section>
 
       {/* Introduction Section */}
-      <section className="py-20 px-6 bg-white">
+      <section className="py-16 sm:py-20 px-4 sm:px-6 bg-white">
         <div className="container mx-auto max-w-4xl text-center">
           <motion.p
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="text-lg leading-relaxed text-gray-700"
+            className="text-base sm:text-lg leading-relaxed text-gray-700"
           >
             Our retreat offers authentic Ayurvedic healing
             surrounded by forests, waterfalls, and fresh
@@ -254,11 +261,11 @@ export default function App() {
 
       {/* About Section */}
       <section
-        className="py-20 px-6"
+        className="py-16 sm:py-20 px-4 sm:px-6"
         style={{ backgroundColor: "#F7F8F3" }}
       >
         <div className="container mx-auto max-w-7xl">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="grid md:grid-cols-2 gap-10 lg:gap-12 items-center">
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -365,7 +372,7 @@ export default function App() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="relative h-[500px] rounded-lg overflow-hidden shadow-xl"
+              className="relative h-[320px] sm:h-[420px] lg:h-[500px] rounded-lg overflow-hidden shadow-xl"
             >
               <img
                 src="https://images.unsplash.com/photo-1740297165018-1431d45d8f11?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
@@ -378,7 +385,7 @@ export default function App() {
       </section>
 
       {/* Doctor Section */}
-      <section className="py-20 px-6 bg-white">
+      <section className="py-16 sm:py-20 px-4 sm:px-6 bg-white">
         <div className="container mx-auto max-w-4xl">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -424,7 +431,7 @@ export default function App() {
       {/* Treatments Section */}
       <section
         id="treatments"
-        className="py-20 px-6"
+        className="py-16 sm:py-20 px-4 sm:px-6"
         style={{ backgroundColor: "#F7F8F3" }}
       >
         <div className="container mx-auto max-w-7xl">
@@ -451,7 +458,7 @@ export default function App() {
               rejuvenate, and restore balance
             </p>
           </motion.div>
-          <div className="grid md:grid-cols-3 gap-x-8 gap-y-12">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
             {[
               {
                 icon: <Heart size={32} />,
@@ -526,8 +533,7 @@ export default function App() {
 
       {/* Full-Width Image Break */}
       <section
-        className="relative overflow-hidden"
-        style={{ height: "70vh" }}
+        className="relative overflow-hidden h-[45vh] min-h-[320px] sm:h-[70vh]"
       >
         <motion.div
           initial={{ scale: 1.2 }}
@@ -545,7 +551,7 @@ export default function App() {
       </section>
 
       {/* Wellness Packages Section */}
-      <section id="packages" className="py-20 px-6 bg-white">
+      <section id="packages" className="py-16 sm:py-20 px-4 sm:px-6 bg-white">
         <div className="container mx-auto max-w-7xl">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -569,7 +575,7 @@ export default function App() {
               healing journey
             </p>
           </motion.div>
-          <div className="grid md:grid-cols-3 gap-0">
+          <div className="grid md:grid-cols-3 gap-0 shadow-sm md:shadow-none">
             {[
               {
                 title: "3 DAY RELAXATION\nRETREAT",
@@ -614,7 +620,7 @@ export default function App() {
                   duration: 0.6,
                   delay: index * 0.1,
                 }}
-                className={`p-8 ${pkg.featured ? "text-white" : "bg-white"}`}
+                className={`p-6 sm:p-8 border border-[#D7DCCD] md:border-0 ${pkg.featured ? "text-white" : "bg-white"}`}
                 style={{
                   backgroundColor: pkg.featured
                     ? "#364F35"
@@ -682,7 +688,7 @@ export default function App() {
       {/* Experiences Section */}
       <section
         id="experiences"
-        className="py-20 px-6"
+        className="py-16 sm:py-20 px-4 sm:px-6"
         style={{ backgroundColor: "#F7F8F3" }}
       >
         <div className="container mx-auto max-w-7xl">
@@ -708,7 +714,7 @@ export default function App() {
               of Kerala
             </p>
           </motion.div>
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               {
                 title: "Forest Walks",
@@ -775,7 +781,7 @@ export default function App() {
       </section>
 
       {/* Philosophy Section */}
-      <section className="py-20 px-6 bg-white">
+      <section className="py-16 sm:py-20 px-4 sm:px-6 bg-white">
         <div className="container mx-auto max-w-5xl">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -837,7 +843,7 @@ export default function App() {
                   duration: 0.6,
                   delay: index * 0.1,
                 }}
-                className="flex gap-6"
+                className="flex gap-4 sm:gap-6"
               >
                 <div className="text-[#627460] flex-shrink-0">
                   {item.icon}
@@ -866,7 +872,7 @@ export default function App() {
       {/* Contact Section */}
       <section
         id="contact"
-        className="py-20 px-6"
+        className="py-16 sm:py-20 px-4 sm:px-6"
         style={{ backgroundColor: "#364F35" }}
       >
         <div className="container mx-auto max-w-4xl">
@@ -971,7 +977,7 @@ export default function App() {
 
       {/* Footer */}
       <footer
-        className="py-8 px-6 text-white text-center"
+        className="py-8 px-4 sm:px-6 text-white text-center"
         style={{ backgroundColor: "#1a2518" }}
       >
         <div className="container mx-auto">
@@ -996,7 +1002,7 @@ export default function App() {
       {/* Booking Modal */}
       {showBookingModal && (
         <div
-          className="fixed inset-0 z-[100] flex items-center justify-center p-6"
+          className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6"
           style={{ backgroundColor: "rgba(0, 0, 0, 0.7)" }}
           onClick={() => setShowBookingModal(false)}
         >
@@ -1004,10 +1010,11 @@ export default function App() {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.3 }}
-            className="bg-white rounded-lg p-8 max-w-md w-full relative"
+            className="bg-white rounded-lg p-6 sm:p-8 max-w-md w-full relative max-h-[calc(100vh-2rem)] overflow-y-auto"
             onClick={(e) => e.stopPropagation()}
           >
             <button
+              aria-label="Close booking form"
               onClick={() => setShowBookingModal(false)}
               className="absolute top-4 right-4 text-gray-400 hover:text-gray-600"
             >
@@ -1109,7 +1116,7 @@ export default function App() {
       {/* Success Modal */}
       {showSuccessModal && (
         <div
-          className="fixed inset-0 z-[100] flex items-center justify-center p-6"
+          className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6"
           style={{ backgroundColor: "rgba(0, 0, 0, 0.7)" }}
           onClick={() => setShowSuccessModal(false)}
         >
@@ -1117,7 +1124,7 @@ export default function App() {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.3 }}
-            className="bg-white rounded-lg p-10 max-w-md w-full relative text-center"
+            className="bg-white rounded-lg p-6 sm:p-10 max-w-md w-full relative text-center max-h-[calc(100vh-2rem)] overflow-y-auto"
             onClick={(e) => e.stopPropagation()}
           >
             <div
@@ -1155,6 +1162,7 @@ export default function App() {
               Please check your email for a confirmation message.
             </p>
             <button
+              aria-label="Close confirmation"
               onClick={() => setShowSuccessModal(false)}
               className="px-10 py-3 text-white uppercase tracking-wider hover:opacity-90 transition-opacity"
               style={{ backgroundColor: "#364F35" }}
