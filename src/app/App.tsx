@@ -1,6 +1,7 @@
 import { useState, useEffect, type FormEvent } from "react";
 import { motion, useScroll, useTransform } from "motion/react";
 import emailjs from "@emailjs/browser";
+import mistyGardenResort from "../imports/misty-garden-resort.jpg";
 import {
   Leaf,
   Heart,
@@ -988,8 +989,8 @@ export default function App() {
             >
               <div className="h-[360px] sm:h-[460px] lg:h-[560px] rounded-lg overflow-hidden shadow-xl">
                 <img
-                  src="https://images.unsplash.com/photo-1560226262-333ea235f065?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
-                  alt="Misty mountain resort landscape in Kerala"
+                  src={mistyGardenResort}
+                  alt="Misty Garden Resorts & Spa building at dusk"
                   className="w-full h-full object-cover"
                 />
               </div>
