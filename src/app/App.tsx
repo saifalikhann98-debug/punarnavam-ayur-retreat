@@ -21,6 +21,7 @@ import {
   BedDouble,
   ExternalLink,
   MessageCircle,
+  Instagram,
 } from "lucide-react";
 
 export default function App() {
@@ -1117,17 +1118,26 @@ export default function App() {
         style={{ backgroundColor: "#1a2518" }}
       >
         <div className="container mx-auto">
-          <p className="mb-2">
-            Contact{" "}
+          <div className="mb-4 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-6">
             <a
               href="https://wa.me/917012844437"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-[#B4C1A6] transition-colors cursor-pointer"
+              className="inline-flex items-center gap-2 text-white/85 transition-colors hover:text-[#B4C1A6]"
             >
+              <Phone size={16} />
               +91 70128 44437
             </a>
-          </p>
+            <a
+              href="https://www.instagram.com/punarnavam_ayur?igsh=MXFyejRya2ZuYnZmMg=="
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-white/85 transition-colors hover:text-[#B4C1A6]"
+            >
+              <Instagram size={16} />
+              Instagram
+            </a>
+          </div>
           <p className="text-white/60 text-sm">
             © 2026 Punarnavam Ayur Retreat All rights reserved
           </p>
