@@ -20,6 +20,7 @@ import {
   Utensils,
   BedDouble,
   ExternalLink,
+  MessageCircle,
 } from "lucide-react";
 
 export default function App() {
@@ -1050,21 +1051,25 @@ export default function App() {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="text-center text-white"
             >
-              <Phone
+              <MessageCircle
                 size={32}
                 className="mx-auto mb-4 text-[#B4C1A6]"
               />
               <h4 className="mb-2 uppercase tracking-wider text-sm">
-                Phone
+                WhatsApp
               </h4>
               <a
                 href="https://wa.me/917012844437"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white/80 hover:text-[#B4C1A6] transition-colors cursor-pointer inline-block"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-[#25D366] px-5 py-3 text-sm font-medium text-white shadow-lg transition-all hover:-translate-y-0.5 hover:bg-[#1fb85a] hover:shadow-xl"
               >
-                +91 70128 44437
+                <Phone size={16} />
+                Chat on WhatsApp
               </a>
+              <p className="mt-3 text-white/70 text-sm">
+                +91 70128 44437
+              </p>
             </motion.div>
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -1128,6 +1133,17 @@ export default function App() {
           </p>
         </div>
       </footer>
+
+      <a
+        href="https://wa.me/917012844437"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Get help on WhatsApp"
+        className="fixed bottom-5 right-5 z-40 inline-flex items-center gap-3 rounded-full bg-[#25D366] px-5 py-3 text-sm font-medium text-white shadow-xl transition-all hover:-translate-y-0.5 hover:bg-[#1fb85a] focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#364F35]"
+      >
+        <MessageCircle size={22} />
+        <span className="hidden sm:inline">Need Help</span>
+      </a>
 
       {/* Booking Modal */}
       {showBookingModal && (
