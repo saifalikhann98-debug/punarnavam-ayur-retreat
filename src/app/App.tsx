@@ -15,6 +15,10 @@ import {
   Eye,
   Wind,
   Sparkle,
+  Waves,
+  Utensils,
+  BedDouble,
+  ExternalLink,
 } from "lucide-react";
 
 export default function App() {
@@ -865,6 +869,138 @@ export default function App() {
                 </div>
               </motion.div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Resort Section */}
+      <section
+        id="resort"
+        className="py-16 sm:py-20 px-4 sm:px-6"
+        style={{ backgroundColor: "#F7F8F3" }}
+      >
+        <div className="container mx-auto max-w-7xl">
+          <div className="grid lg:grid-cols-[1.05fr_0.95fr] gap-10 lg:gap-14 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+            >
+              <p className="text-[#627460] uppercase tracking-[0.18em] text-xs mb-4">
+                About the Resort
+              </p>
+              <h2
+                className="mb-6"
+                style={{
+                  fontFamily: "Cinzel, serif",
+                  fontSize: "clamp(1.75rem, 3vw, 2.5rem)",
+                  color: "#364F35",
+                }}
+              >
+                Misty Garden Resorts & Spa
+              </h2>
+              <p className="text-gray-700 leading-relaxed mb-5">
+                Punarnavam Ayur Retreat is located within Misty
+                Garden Resorts & Spa in Mankulam, a calm hill
+                setting near Munnar shaped by misty valleys,
+                forest air, organic farms, and the quiet rhythm
+                of the Western Ghats.
+              </p>
+              <p className="text-gray-700 leading-relaxed mb-8">
+                The resort gives guests a comfortable base for
+                their healing journey, with restful rooms,
+                peaceful views, dining, spa facilities, and easy
+                access to nearby waterfalls, tea gardens,
+                trekking routes, and nature experiences.
+              </p>
+              <div className="grid sm:grid-cols-2 gap-4 mb-8">
+                {[
+                  {
+                    icon: <BedDouble size={22} />,
+                    label: "Comfortable Stay",
+                    text: "Rooms and cottages for a restful retreat",
+                  },
+                  {
+                    icon: <Utensils size={22} />,
+                    label: "Restaurant",
+                    text: "Fresh meals served within the resort",
+                  },
+                  {
+                    icon: <Waves size={22} />,
+                    label: "Pool & Spa",
+                    text: "Relaxation spaces after therapy sessions",
+                  },
+                  {
+                    icon: <MapPin size={22} />,
+                    label: "Mankulam, Munnar",
+                    text: "A quiet location surrounded by nature",
+                  },
+                ].map((item, index) => (
+                  <motion.div
+                    key={item.label}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{
+                      duration: 0.5,
+                      delay: index * 0.08,
+                    }}
+                    className="flex gap-4 bg-white p-5 rounded-lg border border-[#D7DCCD]"
+                  >
+                    <div className="text-[#627460] flex-shrink-0 mt-1">
+                      {item.icon}
+                    </div>
+                    <div>
+                      <h3
+                        className="mb-1"
+                        style={{
+                          fontFamily: "Cinzel, serif",
+                          fontSize: "0.95rem",
+                          color: "#364F35",
+                        }}
+                      >
+                        {item.label}
+                      </h3>
+                      <p className="text-gray-600 text-sm leading-relaxed">
+                        {item.text}
+                      </p>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+              <a
+                href="https://share.google/CFo32jap1qZAbvImF"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 border-2 border-[#364F35] text-[#364F35] px-6 py-3 uppercase tracking-wider text-sm hover:bg-[#364F35] hover:text-white transition-all"
+              >
+                View on Google Maps
+                <ExternalLink size={16} />
+              </a>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: 40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="relative"
+            >
+              <div className="h-[360px] sm:h-[460px] lg:h-[560px] rounded-lg overflow-hidden shadow-xl">
+                <img
+                  src="https://images.unsplash.com/photo-1560226262-333ea235f065?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
+                  alt="Misty mountain resort landscape in Kerala"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="absolute left-4 right-4 bottom-4 sm:left-6 sm:right-6 sm:bottom-6 bg-white/90 backdrop-blur-sm p-5 rounded-lg shadow-lg">
+                <p className="text-[#364F35] leading-relaxed">
+                  A nature-led stay experience for guests who
+                  come to Punarnavam for Ayurveda, rest, and
+                  quiet time away from the rush.
+                </p>
+              </div>
+            </motion.div>
           </div>
         </div>
       </section>
