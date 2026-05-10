@@ -221,7 +221,7 @@ export default function App() {
               letterSpacing: "clamp(0.08em, 1.2vw, 0.5em)",
             }}
           >
-            HEAL. REJUVENATE. TRANSFORM.
+            HEAL REJUVENATE TRANSFORM
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 30 }}
@@ -229,10 +229,10 @@ export default function App() {
             transition={{ duration: 1, delay: 0.6 }}
             className="text-white max-w-3xl mb-10 text-base sm:text-lg leading-relaxed"
           >
-            Discover authentic Ayurvedic healing nestled in the
-            serene hills of Mankulam, where ancient wisdom meets
-            peaceful nature to restore balance in body, mind,
-            and spirit.
+            Experience an Ayurvedic retreat in Kerala surrounded
+            by the quiet hills of Mankulam where traditional
+            healing fresh mountain air and peaceful nature help
+            you feel balanced again
           </motion.p>
           <motion.button
             initial={{ opacity: 0, y: 30 }}
@@ -256,10 +256,9 @@ export default function App() {
             transition={{ duration: 0.8 }}
             className="text-base sm:text-lg leading-relaxed text-gray-700"
           >
-            Our retreat offers authentic Ayurvedic healing
-            surrounded by forests, waterfalls, and fresh
-            mountain air—where the body relaxes, the mind slows
-            down, and nature becomes part of the therapy.
+            At Punarnavam Ayur Retreat every stay is shaped by
+            authentic Ayurveda forest views waterfall air and the
+            calm rhythm of Mankulam near Munnar
           </motion.p>
         </div>
       </section>
@@ -288,14 +287,12 @@ export default function App() {
                 About the Retreat
               </h2>
               <p className="text-gray-700 leading-relaxed mb-8">
-                Nestled in the pristine hills of Mankulam,
-                Kerala, Punarnavam Ayur Retreat is a sanctuary
-                where traditional Ayurvedic wisdom and natural
-                healing converge. Our retreat offers
-                personalized wellness programs designed to
-                restore balance, rejuvenate the spirit, and
-                transform lives through the power of ancient
-                healing practices.
+                Nestled in the green hills of Mankulam Kerala
+                Punarnavam Ayur Retreat is a peaceful space for
+                Ayurvedic healing wellness and rest Our retreat
+                brings together traditional Kerala Ayurveda
+                personal care and nature based living to help
+                guests restore balance and feel renewed
               </p>
               <div className="space-y-4">
                 <div className="flex items-start gap-4">
@@ -311,8 +308,8 @@ export default function App() {
                       Authentic Ayurvedic Treatments
                     </h4>
                     <p className="text-gray-600 text-sm">
-                      Traditional therapies administered by
-                      experienced practitioners
+                      Kerala Ayurvedic therapies offered with
+                      care by experienced practitioners
                     </p>
                   </div>
                 </div>
@@ -329,8 +326,8 @@ export default function App() {
                       Personalized Wellness Programs
                     </h4>
                     <p className="text-gray-600 text-sm">
-                      Customized healing plans based on your
-                      unique dosha constitution
+                      Wellness plans shaped around your body type
+                      lifestyle and healing needs
                     </p>
                   </div>
                 </div>
@@ -347,8 +344,8 @@ export default function App() {
                       Serene Natural Environment
                     </h4>
                     <p className="text-gray-600 text-sm">
-                      Surrounded by lush forests, waterfalls,
-                      and mountain air
+                      Surrounded by forests waterfalls and fresh
+                      mountain air
                     </p>
                   </div>
                 </div>
@@ -365,8 +362,8 @@ export default function App() {
                       Holistic Approach
                     </h4>
                     <p className="text-gray-600 text-sm">
-                      Integrating body, mind, and spirit for
-                      complete transformation
+                      A gentle approach that supports the body
+                      mind and spirit together
                     </p>
                   </div>
                 </div>
@@ -407,27 +404,25 @@ export default function App() {
                 color: "#364F35",
               }}
             >
-              Dr. Shahana
+              Dr Shahana
             </h2>
             <p className="text-[#627460] mb-6 tracking-wide uppercase text-sm">
               Ayurveda Consultant
             </p>
             <p className="text-gray-700 leading-relaxed mb-4">
-              Dr. Shahana brings over 10 years of experience in
+              Dr Shahana brings over 10 years of experience in
               traditional Ayurvedic medicine and holistic
-              healing. Trained in classical Ayurvedic
-              institutions in Kerala, she specializes in
-              Panchakarma therapies, stress management, and
-              chronic disease treatment.
+              healing Trained in classical Ayurvedic
+              institutions in Kerala she supports guests with
+              Panchakarma therapies stress management and
+              long term wellness care
             </p>
             <p className="text-gray-700 leading-relaxed">
-              Her compassionate approach combines ancient wisdom
-              with modern understanding, creating personalized
-              treatment plans that address the root cause of
-              ailments. Dr. Shahana believes in empowering
-              patients through education about their unique
-              constitution and guiding them towards sustainable
-              wellness practices.
+              Her approach is warm simple and personal She
+              listens closely understands each guest and guides
+              them with Ayurveda diet lifestyle and daily
+              wellness practices that feel practical after the
+              retreat too
             </p>
           </motion.div>
         </div>
@@ -459,8 +454,8 @@ export default function App() {
               OUR TREATMENTS
             </h2>
             <p className="text-gray-600 text-sm">
-              Traditional Ayurvedic therapies to detoxify,
-              rejuvenate, and restore balance
+              Traditional Ayurvedic therapies for detox
+              rejuvenation pain relief stress care and balance
             </p>
           </motion.div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
@@ -469,37 +464,37 @@ export default function App() {
                 icon: <Heart size={32} />,
                 title: "ABHYANGA",
                 description:
-                  "A synchronized full-body oil massage using warm herbal oils that release tension, improve circulation, nourish tissues, and deeply relaxes the body",
+                  "A full body Ayurvedic oil massage with warm herbal oils that helps release tension support circulation nourish the body and bring deep relaxation",
               },
               {
                 icon: <Droplets size={32} />,
                 title: "SHIRODHARA",
                 description:
-                  "A calming therapy where warm medicated oil is gently poured over the forehead to relax the nervous system and reduce stress",
+                  "A calming therapy where warm medicated oil flows gently over the forehead to relax the nervous system and ease stress",
               },
               {
                 icon: <Eye size={32} />,
                 title: "NETRASEKAM",
                 description:
-                  "A soothing eye therapy using medicated decoctions that relieves the eyes and helps reduce strain from digital exposure",
+                  "A soothing Ayurvedic eye therapy that helps tired eyes feel fresh and relaxed after screen strain",
               },
               {
                 icon: <Wind size={32} />,
                 title: "CHOORNAPINDA SWEDAM",
                 description:
-                  "A therapeutic herbal powder bolus massage that reduces pain, inflammation, and stiffness in joints and muscles",
+                  "A herbal powder bolus massage that helps reduce stiffness pain and heaviness in the joints and muscles",
               },
               {
                 icon: <Sparkle size={32} />,
                 title: "STRESS RELIEF THERAPY",
                 description:
-                  "A combination of relaxing treatments designed to calm the mind, ease tension, and restore emotional balance",
+                  "A gentle mix of relaxing Ayurvedic treatments created to calm the mind ease tension and support emotional balance",
               },
               {
                 icon: <Leaf size={32} />,
-                title: "DETOX & REJUVENATION",
+                title: "DETOX AND REJUVENATION",
                 description:
-                  "A comprehensive cleansing program that eliminates toxins, revitalizes energy, and promotes overall wellness",
+                  "A cleansing and rejuvenation program that supports digestion energy sleep and overall wellness",
               },
             ].map((treatment, index) => (
               <motion.div
@@ -576,8 +571,8 @@ export default function App() {
               Wellness Packages
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Choose the perfect retreat program for your
-              healing journey
+              Choose a Kerala Ayurveda wellness program that
+              suits your time energy and healing goals
             </p>
           </motion.div>
           <div className="grid md:grid-cols-3 gap-0 shadow-sm md:shadow-none">
@@ -600,7 +595,7 @@ export default function App() {
                   "Daily Panchakarma treatments",
                   "Stress relief therapies",
                   "Detox herbal support",
-                  "Yoga & meditation sessions",
+                  "Yoga and meditation sessions",
                 ],
                 featured: true,
               },
@@ -611,7 +606,7 @@ export default function App() {
                   "Customized treatment schedule",
                   "Detox and rejuvenation treatments",
                   "Lifestyle and diet guidance",
-                  "Nature-based healing experiences",
+                  "Nature based healing experiences",
                 ],
                 featured: false,
               },
@@ -715,8 +710,8 @@ export default function App() {
               Experiences
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Immerse yourself in the natural beauty and culture
-              of Kerala
+              Explore the nature culture and quiet hill life
+              around Mankulam and Munnar
             </p>
           </motion.div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -806,10 +801,9 @@ export default function App() {
               Our Philosophy
             </h2>
             <p className="text-gray-700 text-lg italic leading-relaxed max-w-3xl mx-auto mb-12">
-              "Ayurveda teaches us that true health is not
-              merely the absence of disease, but a dynamic state
-              of balance and harmony between body, mind, and
-              spirit."
+              Ayurveda reminds us that true health is balance in
+              the body calm in the mind and a deeper connection
+              with daily life
             </p>
           </motion.div>
           <div className="grid md:grid-cols-2 gap-8">
@@ -818,25 +812,25 @@ export default function App() {
                 icon: <Leaf size={32} />,
                 title: "Wholesome Ayurvedic Food",
                 description:
-                  "Organic, locally sourced meals prepared according to Ayurvedic principles",
+                  "Fresh local meals prepared with Ayurvedic principles",
               },
               {
                 icon: <Mountain size={32} />,
                 title: "Peaceful Surroundings",
                 description:
-                  "Tranquil environment surrounded by pristine nature and mountain air",
+                  "A calm hill setting surrounded by nature and mountain air",
               },
               {
                 icon: <Heart size={32} />,
                 title: "Mindful Living",
                 description:
-                  "Practices that cultivate presence, awareness, and inner peace",
+                  "Simple practices that support presence awareness and inner peace",
               },
               {
                 icon: <Trees size={32} />,
                 title: "Connection with Nature",
                 description:
-                  "Healing experiences that reconnect you with the natural world",
+                  "Healing experiences that bring you closer to nature",
               },
             ].map((item, index) => (
               <motion.div
@@ -899,21 +893,21 @@ export default function App() {
                   color: "#364F35",
                 }}
               >
-                Misty Garden Resorts & Spa
+                Misty Garden Resorts and Spa
               </h2>
               <p className="text-gray-700 leading-relaxed mb-5">
                 Punarnavam Ayur Retreat is located within Misty
-                Garden Resorts & Spa in Mankulam, a calm hill
-                setting near Munnar shaped by misty valleys,
-                forest air, organic farms, and the quiet rhythm
-                of the Western Ghats.
+                Garden Resorts and Spa in Mankulam near Munnar
+                The resort is surrounded by misty valleys forest
+                air organic farms and the quiet beauty of the
+                Western Ghats
               </p>
               <p className="text-gray-700 leading-relaxed mb-8">
-                The resort gives guests a comfortable base for
-                their healing journey, with restful rooms,
-                peaceful views, dining, spa facilities, and easy
-                access to nearby waterfalls, tea gardens,
-                trekking routes, and nature experiences.
+                The resort gives guests a comfortable base for an
+                Ayurveda wellness retreat with restful rooms
+                peaceful views dining spa facilities and easy
+                access to waterfalls tea gardens trekking routes
+                and local nature experiences
               </p>
               <div className="grid sm:grid-cols-2 gap-4 mb-8">
                 {[
@@ -929,12 +923,12 @@ export default function App() {
                   },
                   {
                     icon: <Waves size={22} />,
-                    label: "Pool & Spa",
-                    text: "Relaxation spaces after therapy sessions",
+                    label: "Pool and Spa",
+                    text: "Relaxation spaces after Ayurvedic therapy sessions",
                   },
                   {
                     icon: <MapPin size={22} />,
-                    label: "Mankulam, Munnar",
+                    label: "Mankulam Munnar",
                     text: "A quiet location surrounded by nature",
                   },
                 ].map((item, index) => (
@@ -990,15 +984,15 @@ export default function App() {
               <div className="h-[360px] sm:h-[460px] lg:h-[560px] rounded-lg overflow-hidden shadow-xl">
                 <img
                   src={mistyGardenResort}
-                  alt="Misty Garden Resorts & Spa building at dusk"
+                  alt="Misty Garden Resorts and Spa building at dusk"
                   className="w-full h-full object-cover"
                 />
               </div>
               <div className="absolute left-4 right-4 bottom-4 sm:left-6 sm:right-6 sm:bottom-6 bg-white/90 backdrop-blur-sm p-5 rounded-lg shadow-lg">
                 <p className="text-[#364F35] leading-relaxed">
-                  A nature-led stay experience for guests who
-                  come to Punarnavam for Ayurveda, rest, and
-                  quiet time away from the rush.
+                  A nature led stay for guests who come to
+                  Punarnavam for Ayurveda rest and quiet time
+                  away from the rush
                 </p>
               </div>
             </motion.div>
@@ -1046,7 +1040,7 @@ export default function App() {
                 Location
               </h4>
               <p className="text-white/80">
-                Mankulam, Kerala, India
+                Mankulam Kerala India
               </p>
             </motion.div>
             <motion.div
@@ -1119,7 +1113,7 @@ export default function App() {
       >
         <div className="container mx-auto">
           <p className="mb-2">
-            Contact:{" "}
+            Contact{" "}
             <a
               href="https://wa.me/917012844437"
               target="_blank"
@@ -1130,8 +1124,7 @@ export default function App() {
             </a>
           </p>
           <p className="text-white/60 text-sm">
-            © 2026 Punarnavam Ayur Retreat. All rights
-            reserved.
+            © 2026 Punarnavam Ayur Retreat All rights reserved
           </p>
         </div>
       </footer>
@@ -1290,13 +1283,13 @@ export default function App() {
                 color: "#364F35",
               }}
             >
-              Request Submitted!
+              Request Submitted
             </h3>
             <p className="text-gray-700 mb-6 leading-relaxed">
-              Thank you for your interest in Punarnavam Ayur Retreat. We have received your booking request and will contact you within 24 hours to confirm your retreat.
+              Thank you for your interest in Punarnavam Ayur Retreat We have received your booking request and will contact you within 24 hours to confirm your retreat
             </p>
             <p className="text-gray-600 text-sm mb-8">
-              Please check your email for a confirmation message.
+              Please check your email for a confirmation message
             </p>
             <button
               aria-label="Close confirmation"
