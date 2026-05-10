@@ -2,7 +2,6 @@ import { useState, useEffect, type FormEvent } from "react";
 import { motion, useScroll, useTransform } from "motion/react";
 import emailjs from "@emailjs/browser";
 import mistyGardenResort from "../imports/misty-garden-resort.jpg";
-import punarnavamLogo from "../imports/punarnavam-logo.jpeg";
 import {
   Leaf,
   Heart,
@@ -134,17 +133,18 @@ export default function App() {
         }}
       >
         <div className="container mx-auto px-4 sm:px-6 py-4 sm:py-6 flex items-center justify-between gap-4">
-          <a
-            href="#"
-            aria-label="Punarnavam Ayur Retreat home"
-            className="flex items-center shrink-0"
+          <h1
+            className="uppercase"
+            style={{
+              fontFamily: "Cinzel, serif",
+              color: "white",
+              fontWeight: 400,
+              fontSize: "clamp(0.95rem, 3.5vw, 1.25rem)",
+              letterSpacing: "clamp(0.12em, 1vw, 0.3em)",
+            }}
           >
-            <img
-              src={punarnavamLogo}
-              alt="Punarnavam Ayur Retreat"
-              className="h-12 sm:h-14 w-auto max-w-[180px] sm:max-w-[220px] object-contain rounded-sm"
-            />
-          </a>
+            PUNARNAVAM
+          </h1>
           <nav className="hidden md:flex items-center gap-8">
             <button
               onClick={() => document.getElementById('experiences')?.scrollIntoView({ behavior: 'smooth' })}
