@@ -1058,18 +1058,18 @@ export default function App() {
               <h4 className="mb-2 uppercase tracking-wider text-sm">
                 WhatsApp
               </h4>
+              <p className="mb-4 text-white/80 text-sm">
+                +91 70128 44437
+              </p>
               <a
                 href="https://wa.me/917012844437"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-[#25D366] px-5 py-3 text-sm font-medium text-white shadow-lg transition-all hover:-translate-y-0.5 hover:bg-[#1fb85a] hover:shadow-xl"
+                className="inline-flex items-center justify-center gap-2 border-2 border-white px-5 py-3 text-sm font-medium text-white transition-all hover:-translate-y-0.5 hover:bg-white hover:text-[#364F35]"
               >
                 <Phone size={16} />
                 Chat on WhatsApp
               </a>
-              <p className="mt-3 text-white/70 text-sm">
-                +91 70128 44437
-              </p>
             </motion.div>
             <motion.div
               initial={{ opacity: 0, y: 30 }}
