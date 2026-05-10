@@ -413,7 +413,7 @@ export default function App() {
               Ayurveda Consultant
             </p>
             <p className="text-gray-700 leading-relaxed mb-4">
-              Dr. Shahana brings over 15 years of experience in
+              Dr. Shahana brings over 10 years of experience in
               traditional Ayurvedic medicine and holistic
               healing. Trained in classical Ayurvedic
               institutions in Kerala, she specializes in
@@ -737,9 +737,9 @@ export default function App() {
                   "https://images.unsplash.com/photo-1553337787-17961c0990db?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800",
               },
               {
-                title: "Backwater Cruises",
+                title: "Trekking",
                 image:
-                  "https://images.unsplash.com/photo-1717069541470-9b1a2b085e1f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800",
+                  "https://images.unsplash.com/photo-1551632811-561732d1e306?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800",
               },
               {
                 title: "Mountain Safaris",
@@ -971,7 +971,7 @@ export default function App() {
                 ))}
               </div>
               <a
-                href="https://share.google/CFo32jap1qZAbvImF"
+                href="https://share.google/PrL9UUb14rrTOqGXu"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 border-2 border-[#364F35] text-[#364F35] px-6 py-3 uppercase tracking-wider text-sm hover:bg-[#364F35] hover:text-white transition-all"
