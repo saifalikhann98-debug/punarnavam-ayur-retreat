@@ -2,7 +2,6 @@ import { useState, useEffect, type FormEvent } from "react";
 import { motion, useScroll, useTransform } from "motion/react";
 import emailjs from "@emailjs/browser";
 import mistyGardenResort from "../imports/misty-garden-resort.jpg";
-import punarnavamLogoTransparent from "../imports/punarnavam-logo-transparent.png";
 import {
   Leaf,
   Heart,
@@ -782,14 +781,8 @@ export default function App() {
       </section>
 
       {/* Philosophy Section */}
-      <section className="relative overflow-hidden py-16 sm:py-20 px-4 sm:px-6 bg-white">
-        <img
-          src={punarnavamLogoTransparent}
-          alt=""
-          aria-hidden="true"
-          className="pointer-events-none absolute right-[-8rem] top-1/2 hidden w-[34rem] max-w-none -translate-y-1/2 opacity-10 md:block lg:right-[-5rem] lg:w-[42rem]"
-        />
-        <div className="container relative z-10 mx-auto max-w-5xl">
+      <section className="py-16 sm:py-20 px-4 sm:px-6 bg-white">
+        <div className="container mx-auto max-w-5xl">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
