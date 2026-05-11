@@ -735,7 +735,7 @@ export default function App() {
               {
                 title: "Forest Walks",
                 image:
-                  "https://images.unsplash.com/photo-1733743366272-f138806d8d89?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800",
+                  "https://images.unsplash.com/photo-1764012393805-1da6013415f4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800",
               },
               {
                 title: "Waterfall Visits",
@@ -750,7 +750,7 @@ export default function App() {
               {
                 title: "Trekking",
                 image:
-                  "https://images.unsplash.com/photo-1551632811-561732d1e306?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800",
+                  "https://images.unsplash.com/photo-1635845509226-01cb9cbc42b2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800",
               },
               {
                 title: "Mountain Safaris",
@@ -760,7 +760,7 @@ export default function App() {
               {
                 title: "Village Experiences",
                 image:
-                  "https://images.unsplash.com/photo-1766404891650-492a7192696b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800",
+                  "https://images.unsplash.com/photo-1723107981957-90682ca6fd6f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800",
               },
             ].map((experience, index) => (
               <motion.div
