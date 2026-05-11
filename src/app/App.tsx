@@ -828,25 +828,25 @@ export default function App() {
                 icon: <Leaf size={32} />,
                 title: "Wholesome Ayurvedic Food",
                 description:
-                  "Fresh local meals prepared with Ayurvedic principles",
+                  "Fresh local Ayurvedic meals prepared with care",
               },
               {
                 icon: <Mountain size={32} />,
                 title: "Peaceful Surroundings",
                 description:
-                  "A calm hill setting surrounded by nature and mountain air",
+                  "Calm hill setting with nature and mountain air",
               },
               {
                 icon: <Heart size={32} />,
                 title: "Mindful Living",
                 description:
-                  "Simple practices that support presence awareness and inner peace",
+                  "Simple practices for presence and inner peace",
               },
               {
                 icon: <Trees size={32} />,
                 title: "Connection with Nature",
                 description:
-                  "Healing experiences that bring you closer to nature",
+                  "Healing experiences close to the natural world",
               },
             ].map((item, index) => (
               <motion.div
