@@ -36,6 +36,7 @@ export default function App() {
     phone: "",
     email: "",
     note: "",
+    website: "",
   });
 
   const { scrollY } = useScroll();
@@ -55,31 +56,43 @@ export default function App() {
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    if (
-      !formData.fullName ||
-      !formData.phone ||
-      !formData.email
-    ) {
+    if (formData.website) {
+      return;
+    }
+
+    const fullName = formData.fullName.trim();
+    const phone = formData.phone.trim();
+    const email = formData.email.trim();
+    const note = formData.note.trim();
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!fullName || !phone || !email) {
       alert("Please fill in all required fields.");
+      return;
+    }
+
+    if (!emailPattern.test(email)) {
+      alert("Please enter a valid email address.");
       return;
     }
 
     setIsSubmitting(true);
 
     try {
-      const serviceId =
-        import.meta.env.VITE_EMAILJS_SERVICE_ID || "service_ilfhza8";
-      const templateId =
-        import.meta.env.VITE_EMAILJS_TEMPLATE_ID || "template_zjy3y19";
-      const publicKey =
-        import.meta.env.VITE_EMAILJS_PUBLIC_KEY || "mYpwEHZH5G02AFCCT";
+      const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+      const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+      const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+      if (!serviceId || !templateId || !publicKey) {
+        throw new Error("Email service is not configured");
+      }
 
       // Template parameters that will be used in your email template
       const templateParams = {
-        from_name: formData.fullName,
-        from_email: formData.email,
-        phone: formData.phone,
-        message: formData.note || "No additional notes",
+        from_name: fullName,
+        from_email: email,
+        phone,
+        message: note || "No additional notes",
         to_email: "punarnavamayurretreat@gmail.com",
       };
 
@@ -97,6 +110,7 @@ export default function App() {
         phone: "",
         email: "",
         note: "",
+        website: "",
       });
     } catch (error) {
       console.error("EmailJS Error:", error);
@@ -1195,6 +1209,8 @@ export default function App() {
                 <input
                   type="text"
                   required
+                  maxLength={80}
+                  autoComplete="name"
                   value={formData.fullName}
                   onChange={(e) =>
                     setFormData({
@@ -1213,6 +1229,8 @@ export default function App() {
                 <input
                   type="tel"
                   required
+                  maxLength={24}
+                  autoComplete="tel"
                   value={formData.phone}
                   onChange={(e) =>
                     setFormData({
@@ -1230,6 +1248,8 @@ export default function App() {
                 <input
                   type="email"
                   required
+                  maxLength={120}
+                  autoComplete="email"
                   value={formData.email}
                   onChange={(e) =>
                     setFormData({
@@ -1245,6 +1265,7 @@ export default function App() {
                   Note (optional)
                 </label>
                 <textarea
+                  maxLength={500}
                   value={formData.note}
                   onChange={(e) =>
                     setFormData({
@@ -1254,6 +1275,22 @@ export default function App() {
                   }
                   rows={4}
                   className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:border-[#627460] resize-none"
+                />
+              </div>
+              <div className="hidden" aria-hidden="true">
+                <label htmlFor="website">Website</label>
+                <input
+                  id="website"
+                  type="text"
+                  tabIndex={-1}
+                  autoComplete="off"
+                  value={formData.website}
+                  onChange={(e) =>
+                    setFormData({
+                      ...formData,
+                      website: e.target.value,
+                    })
+                  }
                 />
               </div>
               <button

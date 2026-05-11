@@ -25,12 +25,12 @@ The production output is generated in `dist/`.
 Booking requests are sent through EmailJS. For Vercel, add these environment variables in the project settings:
 
 ```bash
-VITE_EMAILJS_SERVICE_ID=service_ilfhza8
-VITE_EMAILJS_TEMPLATE_ID=template_zjy3y19
-VITE_EMAILJS_PUBLIC_KEY=mYpwEHZH5G02AFCCT
+VITE_EMAILJS_SERVICE_ID=your_emailjs_service_id
+VITE_EMAILJS_TEMPLATE_ID=your_emailjs_template_id
+VITE_EMAILJS_PUBLIC_KEY=your_emailjs_public_key
 ```
 
-The same keys are included in `.env.example` for local setup.
+Use the real values only in Vercel environment variables or in a local `.env` file that is not committed.
 
 ## Vercel
 

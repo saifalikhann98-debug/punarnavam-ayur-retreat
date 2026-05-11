@@ -53,17 +53,17 @@ Sent from Punarnavam Ayur Retreat Website
 2. Find your **Public Key** (it looks like: "YOUR_PUBLIC_KEY_HERE")
 3. Copy it
 
-## Step 5: Update Your Website Code
+## Step 5: Add Environment Variables
 
-Open `src/app/App.tsx` and find this section (around line 30):
+Add these values in Vercel project settings and in your local `.env` file when testing locally:
 
-```typescript
-const serviceId = 'YOUR_SERVICE_ID';  // Replace with your Service ID
-const templateId = 'YOUR_TEMPLATE_ID'; // Replace with your Template ID
-const publicKey = 'YOUR_PUBLIC_KEY';   // Replace with your Public Key
+```bash
+VITE_EMAILJS_SERVICE_ID=your_emailjs_service_id
+VITE_EMAILJS_TEMPLATE_ID=your_emailjs_template_id
+VITE_EMAILJS_PUBLIC_KEY=your_emailjs_public_key
 ```
 
-Replace the placeholder values with your actual IDs from EmailJS.
+Do not commit real EmailJS values to the repository. Vite exposes `VITE_` variables in the browser bundle, so these values should be treated as operational configuration rather than private secrets.
 
 ## Step 6: Test It!
 
