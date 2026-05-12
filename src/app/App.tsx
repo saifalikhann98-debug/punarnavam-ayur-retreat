@@ -79,13 +79,12 @@ export default function App() {
     setIsSubmitting(true);
 
     try {
-      const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
-      const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
-      const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
-
-      if (!serviceId || !templateId || !publicKey) {
-        throw new Error("Email service is not configured");
-      }
+      const serviceId =
+        import.meta.env.VITE_EMAILJS_SERVICE_ID || "service_ilfhza8";
+      const templateId =
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID || "template_zjy3y19";
+      const publicKey =
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY || "mYpwEHZH5G02AFCCT";
 
       // Template parameters that will be used in your email template
       const templateParams = {
