@@ -2,6 +2,7 @@ import { useState, useEffect, type FormEvent } from "react";
 import { motion, useScroll, useTransform } from "motion/react";
 import emailjs from "@emailjs/browser";
 import mistyGardenResort from "../imports/misty-garden-resort.jpg";
+import headerLogo from "../imports/header-logo.png";
 import {
   Leaf,
   Heart,
@@ -38,6 +39,11 @@ export default function App() {
     note: "",
     website: "",
   });
+  const [formErrors, setFormErrors] = useState({
+    fullName: "",
+    phone: "",
+    email: "",
+  });
 
   const { scrollY } = useScroll();
   const heroY = useTransform(scrollY, [0, 500], [0, 150]);
@@ -65,14 +71,28 @@ export default function App() {
     const email = formData.email.trim();
     const note = formData.note.trim();
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const phonePattern = /^[+\d\s()-]{7,24}$/;
+    const nextErrors = {
+      fullName: fullName ? "" : "Please enter your name",
+      phone: phone
+        ? phonePattern.test(phone)
+          ? ""
+          : "Please enter a valid phone number"
+        : "Please enter your phone number",
+      email: email
+        ? emailPattern.test(email)
+          ? ""
+          : "Please enter a valid email address"
+        : "Please enter your email address",
+    };
 
-    if (!fullName || !phone || !email) {
-      alert("Please fill in all required fields.");
-      return;
-    }
+    setFormErrors(nextErrors);
 
-    if (!emailPattern.test(email)) {
-      alert("Please enter a valid email address.");
+    if (
+      nextErrors.fullName ||
+      nextErrors.phone ||
+      nextErrors.email
+    ) {
       return;
     }
 
@@ -111,6 +131,11 @@ export default function App() {
         note: "",
         website: "",
       });
+      setFormErrors({
+        fullName: "",
+        phone: "",
+        email: "",
+      });
     } catch (error) {
       console.error("EmailJS Error:", error);
       alert(
@@ -148,18 +173,17 @@ export default function App() {
         }}
       >
         <div className="container mx-auto px-4 sm:px-6 py-4 sm:py-6 flex items-center justify-between gap-4">
-          <h1
-            className="uppercase"
-            style={{
-              fontFamily: "Cinzel, serif",
-              color: "white",
-              fontWeight: 400,
-              fontSize: "clamp(0.95rem, 3.5vw, 1.25rem)",
-              letterSpacing: "clamp(0.12em, 1vw, 0.3em)",
-            }}
+          <a
+            href="#"
+            aria-label="Punarnavam Ayur Retreat home"
+            className="flex items-center shrink-0"
           >
-            PUNARNAVAM
-          </h1>
+            <img
+              src={headerLogo}
+              alt="Punarnavam"
+              className="h-9 sm:h-11 w-auto max-w-[170px] sm:max-w-[240px] object-contain"
+            />
+          </a>
           <nav className="hidden md:flex items-center gap-8">
             <button
               onClick={() => document.getElementById('experiences')?.scrollIntoView({ behavior: 'smooth' })}
@@ -392,8 +416,8 @@ export default function App() {
               className="relative h-[320px] sm:h-[420px] lg:h-[500px] rounded-lg overflow-hidden shadow-xl"
             >
               <img
-                src="https://images.unsplash.com/photo-1740297165018-1431d45d8f11?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
-                alt="Ayurvedic Spa Treatment"
+                src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
+                alt="Ayurvedic massage therapy"
                 className="w-full h-full object-cover"
               />
             </motion.div>
@@ -1211,14 +1235,26 @@ export default function App() {
                   maxLength={80}
                   autoComplete="name"
                   value={formData.fullName}
-                  onChange={(e) =>
+                  onChange={(e) => {
                     setFormData({
                       ...formData,
                       fullName: e.target.value,
-                    })
-                  }
-                  className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:border-[#627460]"
+                    });
+                    if (formErrors.fullName) {
+                      setFormErrors({
+                        ...formErrors,
+                        fullName: "",
+                      });
+                    }
+                  }}
+                  className={`w-full px-4 py-2 border rounded focus:outline-none focus:border-[#627460] ${formErrors.fullName ? "border-red-500" : "border-gray-300"}`}
+                  aria-invalid={Boolean(formErrors.fullName)}
                 />
+                {formErrors.fullName && (
+                  <p className="mt-1 text-sm text-red-600">
+                    {formErrors.fullName}
+                  </p>
+                )}
               </div>
               <div>
                 <label className="block mb-2 text-sm text-gray-700">
@@ -1231,14 +1267,26 @@ export default function App() {
                   maxLength={24}
                   autoComplete="tel"
                   value={formData.phone}
-                  onChange={(e) =>
+                  onChange={(e) => {
                     setFormData({
                       ...formData,
                       phone: e.target.value,
-                    })
-                  }
-                  className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:border-[#627460]"
+                    });
+                    if (formErrors.phone) {
+                      setFormErrors({
+                        ...formErrors,
+                        phone: "",
+                      });
+                    }
+                  }}
+                  className={`w-full px-4 py-2 border rounded focus:outline-none focus:border-[#627460] ${formErrors.phone ? "border-red-500" : "border-gray-300"}`}
+                  aria-invalid={Boolean(formErrors.phone)}
                 />
+                {formErrors.phone && (
+                  <p className="mt-1 text-sm text-red-600">
+                    {formErrors.phone}
+                  </p>
+                )}
               </div>
               <div>
                 <label className="block mb-2 text-sm text-gray-700">
@@ -1250,14 +1298,26 @@ export default function App() {
                   maxLength={120}
                   autoComplete="email"
                   value={formData.email}
-                  onChange={(e) =>
+                  onChange={(e) => {
                     setFormData({
                       ...formData,
                       email: e.target.value,
-                    })
-                  }
-                  className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:border-[#627460]"
+                    });
+                    if (formErrors.email) {
+                      setFormErrors({
+                        ...formErrors,
+                        email: "",
+                      });
+                    }
+                  }}
+                  className={`w-full px-4 py-2 border rounded focus:outline-none focus:border-[#627460] ${formErrors.email ? "border-red-500" : "border-gray-300"}`}
+                  aria-invalid={Boolean(formErrors.email)}
                 />
+                {formErrors.email && (
+                  <p className="mt-1 text-sm text-red-600">
+                    {formErrors.email}
+                  </p>
+                )}
               </div>
               <div>
                 <label className="block mb-2 text-sm text-gray-700">
